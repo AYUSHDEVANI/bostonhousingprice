@@ -7,5 +7,32 @@
 </head>
 <body>
     <h1>Devani Ayush</h1>
+    <h1>Boston House Price Prediction</h1>
+
+    <form action="{{ url_for('predict')}}" method="post">
+        <input type="text" name="CRIM" placeholder="CRIM" required><br>
+        <input type="text" name="ZN" placeholder="ZN"><br>
+        <input type="text" name="INDUS" placeholder="INDUS"><br>
+        <input type="text" name="CHAS" placeholder="CHAS"><br>
+        <input type="text" name="NOX" placeholder="NOX"><br>
+        <input type="text" name="RM" placeholder="RM"><br>
+        <input type="text" name="AGE" placeholder="AGE"><br>
+        <input type="text" name="DIS" placeholder="DIS"><br>
+        <input type="text" name="RAD" placeholder="RAD"><br>
+        <input type="text" name="TAX" placeholder="TAX"><br>
+        <input type="text" name="PTRATIO" placeholder="PTRATIO"><br>
+        <input type="text" name="B" placeholder="B"><br>
+        <input type="text" name="LSTAT" placeholder="LSTAT"><br>
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+
+
+    </form>
+    <br><br>
+
+    {{prediction_text}}
+    
 </body>
 </html>
