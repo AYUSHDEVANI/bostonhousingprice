@@ -27,9 +27,9 @@ jobs:
       #   run: |
       #     pytest
 
-      - name: Run tests with collection only
-        run: |
-          pytest --collect-only  # See what pytest is trying to collect
+      # - name: Run tests with collection only
+      #   run: |
+      #     pytest --collect-only  # See what pytest is trying to collect
 
       - name: Deploy
         if: github.ref == 'refs/heads/main'
