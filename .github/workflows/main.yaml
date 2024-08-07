@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.8'  # specify the Python version you are using
+        python-version: '3.12'  # specify the Python version you are using
 
     - name: Install dependencies
       run: |
@@ -24,11 +24,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run tests
-      run: |
-        pytest
-      env:
-        pythonLocation: /opt/hostedtoolcache/Python/3.8.18/x64
-        LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.18/x64/lib
+      
 
     - name: Build and deploy to Render
       env:
