@@ -1,4 +1,4 @@
-name: CI
+name: RENDER
 
 on:
   pull_request:
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.12'  # Specify the Python version you need
+          python-version: '3.12.4'  # Specify the Python version you need
 
       - name: Install dependencies
         run: |
@@ -26,6 +26,10 @@ jobs:
       - name: Run tests
         run: |
           pytest
+          
+      - name: Run tests with collection only
+        run: |
+          pytest --collect-only  # See what pytest is trying to collect
 
       - name: Deploy
         if: github.ref == 'refs/heads/main'
