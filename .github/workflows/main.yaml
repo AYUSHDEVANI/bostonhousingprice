@@ -25,8 +25,10 @@ jobs:
 
     - name: Run tests
       run: |
-        # Add your test command here
         pytest
+      env:
+        pythonLocation: /opt/hostedtoolcache/Python/3.8.18/x64
+        LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.18/x64/lib
 
     - name: Build and deploy to Render
       env:
@@ -38,4 +40,3 @@ jobs:
 
         # Deploy to Render
         render deploy <your-service-id> --env <environment>
-
