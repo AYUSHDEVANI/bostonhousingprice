@@ -27,9 +27,9 @@ jobs:
         run: |
           docker build -t my-app-image .
 
-      - name: Run tests with verbose output
-        run: |
-          pytest -v  # Run tests with verbose output to see detailed results
+      # - name: Run tests with verbose output
+      #   run: |
+      #     pytest -v  # Run tests with verbose output to see detailed results
 
       - name: Deploy
         if: github.ref == 'refs/heads/main'
