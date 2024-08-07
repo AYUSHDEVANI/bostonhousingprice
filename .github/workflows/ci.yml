@@ -37,3 +37,11 @@ jobs:
           deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
         run: |
           curl "$deploy_url"
+
+      - name: Deploy
+        if: github.ref == 'refs/heads/main'
+        env:
+          deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          echo "Deploy URL: $deploy_url"  # Debugging step
+          curl -v "$deploy_url"  # Add -v for verbose output to debug the curl request
